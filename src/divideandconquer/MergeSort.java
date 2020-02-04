@@ -1,5 +1,8 @@
 package divideandconquer;
 
+import jdk.nashorn.api.tree.SpreadTree;
+import utilities.SortingUtilities;
+
 import java.util.Arrays;
 
 public class MergeSort {
@@ -8,8 +11,11 @@ public class MergeSort {
     public static void main(String[] args){
 
         int[] testArray = {10,13,1,2,4,18,22,-10};
+        testArray = SortingUtilities.genArray(1000,1,100);
+
         mergeSort(testArray);
         System.out.println(Arrays.toString(testArray));
+        System.out.println("Inversions? " + SortingUtilities.hasInversions(testArray));
     }
 
     public static void mergeSort(int[] array){
